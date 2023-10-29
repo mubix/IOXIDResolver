@@ -8,6 +8,10 @@ from impacket.dcerpc.v5.dcomrt import IObjectExporter
 
 def main(argv):
 
+    if not argv:
+        print('IOXIDResolver.py -t <target>')
+        sys.exit(2)
+
     try:
         opts, args = getopt.getopt(argv,"ht:",["target="])
     except getopt.GetoptError:
